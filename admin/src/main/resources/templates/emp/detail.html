@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="timo-detail-page">
+        <div class="timo-detail-title">基本信息</div>
+        <table class="layui-table timo-detail-table">
+            <colgroup>
+                <col width="100px"><col>
+                <col width="100px"><col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>工号</th>
+                    <td th:text="${emp.id}"></td>
+                    <th>员工姓名</th>
+                    <td th:text="${emp.name}"></td>
+                </tr>
+                <tr>
+                    <th>员工部门id</th>
+                    <td th:text="${emp.dep_id}"></td>
+                    <th>员工职位id</th>
+                    <td th:text="${emp.wor_id}"></td>
+                </tr>
+                <tr>
+                    <th>员工头像</th>
+                    <td th:text="${emp.awatar}"></td>
+                    <th>识别照片</th>
+                    <td th:text="${emp.picture}"></td>
+                </tr>
+                <tr>
+                    <th>识别记录</th>
+                    <td th:text="${emp.info}"></td>
+                    <th>手机号</th>
+                    <td th:text="${emp.phone}"></td>
+                </tr>
+                <tr>
+                    <th>员工类型</th>
+                    <td th:text="${emp.type_id}" colspan="3"></td>
+                </tr>
+                <tr>
+                    <th>创建者</th>
+                    <td th:text="${emp.createBy?.nickname}"></td>
+                    <th>更新者</th>
+                    <td th:text="${emp.updateBy?.nickname}"></td>
+                </tr>
+                <tr>
+                    <th>更新时间</th>
+                    <td th:text="${#dates.format(emp.updateDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                    <th>入职时间</th>
+                    <td th:text="${#dates.format(emp.createDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                </tr>
+                <tr>
+                    <th>备注</th>
+                    <td th:text="${emp.remark}" colspan="3"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<script th:replace="/common/template :: script"></script>
+</body>
+</html>

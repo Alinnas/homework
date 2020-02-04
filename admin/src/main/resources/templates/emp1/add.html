@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="layui-form timo-compile">
+    <form th:action="@{/emp1/save}">
+        <input type="hidden" name="id" th:if="${emp1}" th:value="${emp1.id}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">部门id</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="dep_id" placeholder="请输入部门id" th:value="${emp1?.dep_id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">员工姓名</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="name" placeholder="请输入员工姓名" th:value="${emp1?.name}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">员工电话</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="phone" placeholder="请输入员工电话" th:value="${emp1?.phone}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">员工类型</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="type_id" placeholder="请输入员工类型" th:value="${emp1?.type_id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">职位类型</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="wor_id" placeholder="请输入职位类型" th:value="${emp1?.wor_id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">头像</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="awatar" placeholder="请输入头像" th:value="${emp1?.awatar}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">识别照片</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="picture" placeholder="请输入识别照片" th:value="${emp1?.picture}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">识别记录</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="info" placeholder="请输入识别记录" th:value="${emp1?.info}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="endDate" placeholder="请输入结束时间" th:value="${emp1?.endDate}">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea" name="remark">[[${emp1?.remark}]]</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item timo-finally">
+            <button class="layui-btn ajax-submit"><i class="fa fa-check-circle"></i> 保存</button>
+            <button class="layui-btn btn-secondary close-popup"><i class="fa fa-times-circle"></i> 关闭</button>
+        </div>
+    </form>
+</div>
+<script th:replace="/common/template :: script"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="timo-detail-page">
+        <div class="timo-detail-title">基本信息</div>
+        <table class="layui-table timo-detail-table">
+            <colgroup>
+                <col width="100px"><col>
+                <col width="100px"><col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>主键ID</th>
+                    <td th:text="${sysVisitor.id}"></td>
+                    <th>注册结束时间</th>
+                    <td th:text="${sysVisitor.endDate}"></td>
+                </tr>
+                <tr>
+                    <th>标题</th>
+                    <td th:text="${sysVisitor.title}"></td>
+                    <th>访客姓名</th>
+                    <td th:text="${sysVisitor.name}"></td>
+                </tr>
+                <tr>
+                    <th>访客类型</th>
+                    <td th:text="${sysVisitor.type}"></td>
+                    <th>来访目的</th>
+                    <td th:text="${sysVisitor.purpose}"></td>
+                </tr>
+                <tr>
+                    <th>头像</th>
+                    <td th:text="${sysVisitor.avatar}"></td>
+                    <th>识别照片</th>
+                    <td th:text="${sysVisitor.picture}"></td>
+                </tr>
+                <tr>
+                    <th>识别</th>
+                    <td th:text="${sysVisitor.info}"></td>
+                    <th>受访人id</th>
+                    <td th:text="${sysVisitor.v_id}"></td>
+                </tr>
+                <tr>
+                    <th>联系电话</th>
+                    <td th:text="${sysVisitor.phone}"></td>
+                    <th>门禁结束时间</th>
+                    <td th:text="${sysVisitor.endDate}"></td>
+                </tr>
+                <tr>
+                    <th>门禁开始时间</th>
+                    <td th:text="${sysVisitor.closeDate}"></td>
+                    <th>签名</th>
+                    <td th:text="${sysVisitor.qianming}"></td>
+                </tr>
+                <tr>
+                    <th>创建者</th>
+                    <td th:text="${sysVisitor.createBy?.nickname}"></td>
+                    <th>更新者</th>
+                    <td th:text="${sysVisitor.updateBy?.nickname}"></td>
+                </tr>
+                <tr>
+                    <th>更新时间</th>
+                    <td th:text="${#dates.format(sysVisitor.updateDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                    <th>注册时间</th>
+                    <td th:text="${#dates.format(sysVisitor.createDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                </tr>
+                <tr>
+                    <th>备注</th>
+                    <td th:text="${sysVisitor.remark}" colspan="3"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<script th:replace="/common/template :: script"></script>
+</body>
+</html>

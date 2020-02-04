@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="timo-detail-page">
+        <div class="timo-detail-title">基本信息</div>
+        <table class="layui-table timo-detail-table">
+            <colgroup>
+                <col width="100px"><col>
+                <col width="100px"><col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>主键ID</th>
+                    <td th:text="${emp1.id}"></td>
+                    <th>部门id</th>
+                    <td th:text="${emp1.dep_id}"></td>
+                </tr>
+                <tr>
+                    <th>员工姓名</th>
+                    <td th:text="${emp1.name}"></td>
+                    <th>员工电话</th>
+                    <td th:text="${emp1.phone}"></td>
+                </tr>
+                <tr>
+                    <th>员工类型</th>
+                    <td th:text="${emp1.type_id}"></td>
+                    <th>职位类型</th>
+                    <td th:text="${emp1.wor_id}"></td>
+                </tr>
+                <tr>
+                    <th>头像</th>
+                    <td th:text="${emp1.awatar}"></td>
+                    <th>识别照片</th>
+                    <td th:text="${emp1.picture}"></td>
+                </tr>
+                <tr>
+                    <th>识别记录</th>
+                    <td th:text="${emp1.info}"></td>
+                    <th>结束时间</th>
+                    <td th:text="${emp1.endDate}"></td>
+                </tr>
+                <tr>
+                    <th>创建者</th>
+                    <td th:text="${emp1.createBy?.nickname}"></td>
+                    <th>更新者</th>
+                    <td th:text="${emp1.updateBy?.nickname}"></td>
+                </tr>
+                <tr>
+                    <th>更新时间</th>
+                    <td th:text="${#dates.format(emp1.updateDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                    <th>创建时间</th>
+                    <td th:text="${#dates.format(emp1.createDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                </tr>
+                <tr>
+                    <th>备注</th>
+                    <td th:text="${emp1.remark}" colspan="3"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<script th:replace="/common/template :: script"></script>
+</body>
+</html>

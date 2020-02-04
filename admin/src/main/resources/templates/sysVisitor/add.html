@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/common/template :: header(~{::title},~{::link},~{::style})">
+</head>
+<body>
+    <div class="layui-form timo-compile">
+    <form th:action="@{/sysVisitor/save}">
+        <input type="hidden" name="id" th:if="${sysVisitor}" th:value="${sysVisitor.id}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">注册结束时间</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="endDate" placeholder="请输入注册结束时间" th:value="${sysVisitor?.endDate}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="title" placeholder="请输入标题" th:value="${sysVisitor?.title}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">访客姓名</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="name" placeholder="请输入访客姓名" th:value="${sysVisitor?.name}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">访客类型</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="type" placeholder="请输入访客类型" th:value="${sysVisitor?.type}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">来访目的</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="purpose" placeholder="请输入来访目的" th:value="${sysVisitor?.purpose}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">头像</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="avatar" placeholder="请输入头像" th:value="${sysVisitor?.avatar}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">识别照片</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="picture" placeholder="请输入识别照片" th:value="${sysVisitor?.picture}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">识别</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="info" placeholder="请输入识别" th:value="${sysVisitor?.info}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">受访人id</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="v_id" placeholder="请输入受访人id" th:value="${sysVisitor?.v_id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系电话</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="phone" placeholder="请输入联系电话" th:value="${sysVisitor?.phone}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">门禁结束时间</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="endDate" placeholder="请输入门禁结束时间" th:value="${sysVisitor?.endDate}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">门禁开始时间</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="closeDate" placeholder="请输入门禁开始时间" th:value="${sysVisitor?.closeDate}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">签名</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="qianming" placeholder="请输入签名" th:value="${sysVisitor?.qianming}">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea" name="remark">[[${sysVisitor?.remark}]]</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item timo-finally">
+            <button class="layui-btn ajax-submit"><i class="fa fa-check-circle"></i> 保存</button>
+            <button class="layui-btn btn-secondary close-popup"><i class="fa fa-times-circle"></i> 关闭</button>
+        </div>
+    </form>
+</div>
+<script th:replace="/common/template :: script"></script>
+</body>
+</html>
